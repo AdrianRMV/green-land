@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variables de marca centralizadas */
+:root {
+  --brand-green-dark: #2D5016;
+  --brand-green-mid: #4A7C2E;
+  --brand-green: #7CB342;
+  --brand-green-light: #AED581;
+  --earth-dark: #5D4037;
+  --earth: #795548;
+  --sun: #FFD54F;
+  --neutral-50: #FAFAFA;
+  --neutral-900: #212121;
+}
+
+/* Smooth scroll global */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Evitar que el header sticky tape el contenido al hacer scroll a anclas */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Base typography */
+body {
+  @apply antialiased text-neutral-800 bg-white font-body;
+}
+
+/* Utilidad glassmorphism */
+@layer utilities {
+  .glass {
+    @apply bg-white/80 backdrop-blur-md border border-white/20;
+  }
+  .glass-dark {
+    @apply bg-brand-green-dark/90 backdrop-blur-md border border-white/10;
+  }
+}
+
+/* GPU acceleration para animaciones */
+.gpu {
+  transform: translateZ(0);
+  will-change: transform;
+}
