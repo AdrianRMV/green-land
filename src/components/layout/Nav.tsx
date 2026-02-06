@@ -106,31 +106,34 @@ export function Nav() {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu: fondo opaco y panel sólido para que el texto se vea bien */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 lg:hidden"
+            className="fixed inset-0 z-[100] lg:hidden"
           >
+            {/* Overlay oscuro opaco (sin blur que pueda afectar al panel) */}
             <div
-              className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+              className="absolute inset-0 bg-black/50"
               onClick={() => setMobileOpen(false)}
               aria-hidden
             />
+            {/* Panel del menú: fondo blanco 100% opaco, texto oscuro legible */}
             <motion.div
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'tween', duration: 0.3 }}
-              className="absolute right-0 top-0 bottom-0 w-72 bg-white shadow-xl p-6"
+              className="absolute right-0 top-0 bottom-0 w-72 bg-white shadow-2xl p-6 opacity-100"
+              style={{ backgroundColor: '#ffffff' }}
             >
               <button
                 type="button"
                 aria-label={t('nav.closeMenu')}
-                className="absolute top-4 right-4 p-2 text-neutral-600"
+                className="absolute top-4 right-4 p-2 text-neutral-700 hover:text-brand-green-dark hover:bg-neutral-100 rounded-lg transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -142,7 +145,7 @@ export function Nav() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="text-brand-green-dark font-body font-medium"
+                    className="text-neutral-900 font-body font-semibold text-base hover:text-brand-green-dark hover:bg-brand-green-light/20 py-2 px-3 -mx-3 rounded-lg transition-colors"
                     onClick={() => setMobileOpen(false)}
                   >
                     {t(`nav.${link.key}`)}
@@ -150,7 +153,7 @@ export function Nav() {
                 ))}
                 <Link
                   href="#contacto"
-                  className="mt-4 px-5 py-3 bg-brand-green-dark text-white font-heading font-semibold rounded-lg text-center"
+                  className="mt-4 px-5 py-3 bg-brand-green-dark text-white font-heading font-semibold rounded-lg text-center hover:bg-brand-green-mid transition-colors"
                   onClick={() => setMobileOpen(false)}
                 >
                   {t('nav.quote')}
