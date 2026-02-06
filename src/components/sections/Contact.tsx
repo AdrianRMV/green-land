@@ -140,8 +140,18 @@ export function Contact() {
                   </li>
                 </ul>
               </div>
-              <div className="aspect-[4/3] rounded-2xl bg-neutral-200 flex items-center justify-center text-neutral-500 font-body text-sm">
-                {t('contact.mapPlaceholder')}
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-neutral-200 shadow-card">
+                <iframe
+                  title="Green Land Solutions - Chilliwack, BC, Canada"
+                  src="https://www.google.com/maps?q=Chilliwack,+BC,+Canada&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full min-h-[280px]"
+                />
               </div>
             </div>
           </ScrollReveal>

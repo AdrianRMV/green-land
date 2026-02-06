@@ -30,10 +30,10 @@ export function Hero() {
           className="mb-8"
         >
           <Image
-            src="/logo.png"
+            src="/greendland-logo.jpeg"
             alt="Green Land Solutions"
-            width={220}
-            height={88}
+            width={240}
+            height={90}
             className="mx-auto h-20 sm:h-24 w-auto object-contain drop-shadow-lg"
             priority
           />

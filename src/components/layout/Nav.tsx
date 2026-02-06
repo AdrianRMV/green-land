@@ -42,10 +42,10 @@ export function Nav() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between max-w-7xl">
         <Link href="/" className="flex items-center gap-2 shrink-0">
           <Image
-            src="/logo.png"
+            src="/greendland-logo.jpeg"
             alt="Green Land Solutions"
-            width={120}
-            height={48}
+            width={140}
+            height={52}
             className="h-10 w-auto object-contain"
             priority
           />
